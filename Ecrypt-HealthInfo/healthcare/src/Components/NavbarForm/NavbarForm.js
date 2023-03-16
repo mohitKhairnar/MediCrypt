@@ -12,7 +12,7 @@ function NavbarForm() {
         
       });
       removeItem('access_token')
-      navigate('/login');
+      navigate('/');
       console.log("hello");
     }
   return (

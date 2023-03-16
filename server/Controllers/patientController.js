@@ -4,8 +4,6 @@ const Patient = require('../Models/Patient');
 // const user = require('../Models/Doctor');
 const getAllPatientController = async (req,res)=>{
     console.log(req._id);  //requireUser middleware ne ye id request mai dal di hai..agar hogi to sahi hai agar nahi hogi to gadbad ho jayegi.
-    // return res.send("These are all the posts");
-    return res.send(success(200,"These are all the posts"))
 }
 const createPatientController = async (req,res)=>{
    try{

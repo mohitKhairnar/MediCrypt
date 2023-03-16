@@ -31,9 +31,8 @@ function Login() {
         setItem(KEY_ACCESS_TOKEN,response.data.result.accessToken);
         console.log(getItem(KEY_ACCESS_TOKEN));
         console.log("I am in try");
-        navigate('/login/patients');
+        navigate('/patients');
     } catch (e) {
-      
       console.log("I am in catch");
       if(e.response.data.error){
         setError(e.response.data.error);
