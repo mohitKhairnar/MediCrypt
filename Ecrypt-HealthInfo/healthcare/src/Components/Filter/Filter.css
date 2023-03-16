@@ -1,0 +1,50 @@
+.filterContainer{
+    width: 350px;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    font-family: 'poppins';
+}
+.filterBy{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 20px;
+}
+.filterByButton{
+    width: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #22385f;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 0px rgba(28, 75, 128, 0.5);
+}
+.filterItem{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.filterInput{
+    border-radius: 20px;
+    padding: 10px;
+    width: 80%;
+    margin-top: 20px;
+    color: #22385f;
+    font-weight: 600;
+    font-size: 16px;
+    border: 3px solid #22385f;
+    box-shadow: 0px 5px 10px 0px rgba(28, 75, 128, 0.5);
+}
+.allItems{
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}

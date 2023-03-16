@@ -1,0 +1,22 @@
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.nav-container h2{
+    display: inline;
+}
+.nav-container .banner:hover{
+    color: rgb(240, 184, 184);
+    cursor: pointer;
+}
+.profile{
+    cursor: pointer;
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+}
+.profile :hover{
+    transform: scale(1.1);
+}
