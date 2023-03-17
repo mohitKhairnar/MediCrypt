@@ -5,16 +5,17 @@ const patientSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    age: {
+    patientAge: {
         type: Number,
-        required: true,   //It's will be required
-        unique: true,     //Should be unique
-        lowercase: true   //Even user enters capital it will get small
+        required: true,     
     },
-    weight: {
+    patientWeight: {
         type: Number,
         required: true,
-        unique: true,
+    },
+    email:{
+        type:String,
+        required:true,
     },
     description: {
         type: String,
@@ -23,10 +24,15 @@ const patientSchema = mongoose.Schema({
     medicines:{
         type: [{medicineName: String, medicineQuantity: Number, medicineTime: String}],
     },
-    reportsRequired: {
+    tests:{
+        type:[String]
+    },
+    reports: {
         type: [String],
     },
-
+    patientId:{
+        type:String,
+    }
 })
 
-module.exports = mongoose.model('patient',patientSchema);
+module.exports = mongoose.model('details',patientSchema);

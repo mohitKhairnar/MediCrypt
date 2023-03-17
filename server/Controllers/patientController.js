@@ -1,6 +1,6 @@
 //Post apko tabhi dikhegi jab aap logged in ho.
 const {success, error}  = require("../utils/responseWrapper");
-const Patient = require('../Models/Patient');
+const Patient = require('../Models/patientDetailsSchema');
 // const user = require('../Models/Doctor');
 const getAllPatientController = async (req,res)=>{
     console.log(req._id);  //requireUser middleware ne ye id request mai dal di hai..agar hogi to sahi hai agar nahi hogi to gadbad ho jayegi.

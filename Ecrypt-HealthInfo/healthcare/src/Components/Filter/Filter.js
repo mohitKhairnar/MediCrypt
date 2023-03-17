@@ -1,9 +1,14 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './Filter.css';
 import {FiFilter} from 'react-icons/fi';
 import Item from '../Item/Item';
+import { axiosClient } from '../../utils/axiosClient';
 
 function Filter() {
+  const [filterText,setFilterText] = useState('');
+  function handleSubmit(){
+    console.log(filterText);
+  }
   const [filterBy,filtering] = useState('Filter By ID');
   function filterByID() {
     filtering('Filter By ID');
@@ -14,6 +19,16 @@ function Filter() {
   function filterByEmail() {
     filtering('Filter By Email');
   }
+  const [documents, setDocuments] = useState([]);
+
+  useEffect(async () => {
+    const response = await fetch('/save')
+      .then(response => response.json())
+      .then(data => setDocuments(data))
+      .catch(error => console.error(error));
+  }, []);
+
+  console.log(documents);
   return (
     <div className='filterContainer'>
       <div className='filterBy'>
@@ -36,14 +51,16 @@ function Filter() {
           </div>
         </button>
       </div>
-      <input className="filterInput" type="text" placeholder={filterBy} />
+      <form onSubmit={handleSubmit}>
+          <input className="filterInput" type="text" placeholder={filterBy} onChange={(e)=>setFilterText(e.target.value)} />
+      </form>
       <div className='allItems'>
-        <Item name="Mohit Khairnar" disease="abc"/>
-        <Item name="Abhishek Deokar" disease="pqr"/>
-        <Item name="Ayush Wadalkar" disease="xyz"/>
-        <Item name="Adwait Samak" disease="efg"/>
-        <Item name="Sarthak Deshmukh" disease="hijk"/>
-        <Item name="Mayuresh Shedmekhe" disease="kbc"/>
+        
+        {documents.map(document => (
+          <li key={document.id}>
+            <Item name={document.patientName} age={document.age} weight={document.age}/>
+          </li>
+        ))}
       </div>
     </div>
   )

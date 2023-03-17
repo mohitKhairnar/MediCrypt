@@ -8,7 +8,8 @@ function Item(param) {
             <h4 style={{fontSize: '32px'}}><IoPersonCircle/></h4>
             <h4>{param.name}</h4>
         </div>
-        <p>Disease: {param.disease}</p>
+        <p>Age: {param.age}</p>
+        <p>Weight: {param.weight}</p>
         <div className='dateAndButton'>
             <p>Date: 6 March 2023</p>
             <button className='itemButton'>View Details</button>

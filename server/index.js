@@ -6,6 +6,7 @@ const patientRouter = require('./Routers/patientRouter')
 const morgan = require('morgan');
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
+const detailsaveRouter = require('./Routers/detailsaveRouter')
 dotenv.config('./.env');
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(cors({
 
 app.use("/auth",authRouter);
 app.use("/patient",patientRouter);
+app.use("/save",detailsaveRouter)
 app.get('/',(req,res)=>{
     res.status(200).send("All good");
 })
